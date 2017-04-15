@@ -61,12 +61,102 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.dist">module dist</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dist.dist">
+            function <span class="apidocSignatureSpan"></span>dist
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dist.toString">
+            function <span class="apidocSignatureSpan">dist.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.dist" id="apidoc.module.dist">module dist</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dist.dist" id="apidoc.element.dist.dist">
+        function <span class="apidocSignatureSpan"></span>dist
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dist = function (options) {
+
+
+  if (options.input) {
+    options.source = fs.readFileSync(options.input, &#x27;utf8&#x27;);
+  } else {
+    if (!options.filename &#x26;&#x26; options.complete) {
+      return options.complete(new Error(&#x27;filename is required when using source&#x27;));
+    }
+  }
+
+  options.copyright = (options.copyright) ? fs.readFileSync(options.copyright, &#x27;utf8&#x27;) + &#x27;\n&#x27; : &#x27;&#x27;;
+
+  var devFile = (options.input) ? path.basename(options.input) : options.filename;
+  var devSource = options.copyright + options.source;
+
+  var prodFile = getProdFilename(devFile);
+  var prodSource = generateProd(options.source, options.copyright);
+
+  var dev = {
+    filename: devFile,
+    source: devSource,
+    size: size(devSource)
+  }
+
+  var prod = {
+    filename: prodFile,
+    source: prodSource,
+    size: size(prodSource)
+  }
+
+  if (options.out) {
+    dev.filename = path.join(options.out, dev.filename);
+    prod.filename = path.join(options.out, prod.filename);
+
+    fs.writeFileSync(dev.filename, dev.source);
+    fs.writeFileSync(prod.filename, prod.source);
+
+  }
+
+
+  if (options.complete) {
+    options.complete(null, dev, prod)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dist.toString" id="apidoc.element.dist.toString">
+        function <span class="apidocSignatureSpan">dist.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return toString;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/jgallen23/dist"
-
-    >dist (v0.1.2)</a>
+    <a href="https://github.com/jgallen23/dist">dist (v0.1.2)</a>
 </h1>
 <h4>a cli tool and library to create development and production versions for the browser</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.dist">module dist</a><ol>
 
@@ -98,14 +91,14 @@
 
 
   if (options.input) {
-    options.source = fs.readFileSync(options.input, &#x27;utf8&#x27;);
+    options.source = fs.readFileSync(options.input, 'utf8');
   } else {
-    if (!options.filename &#x26;&#x26; options.complete) {
-      return options.complete(new Error(&#x27;filename is required when using source&#x27;));
+    if (!options.filename &amp;&amp; options.complete) {
+      return options.complete(new Error('filename is required when using source'));
     }
   }
 
-  options.copyright = (options.copyright) ? fs.readFileSync(options.copyright, &#x27;utf8&#x27;) + &#x27;\n&#x27; : &#x27;&#x27;;
+  options.copyright = (options.copyright) ? fs.readFileSync(options.copyright, 'utf8') + '\n' : '';
 
   var devFile = (options.input) ? path.basename(options.input) : options.filename;
   var devSource = options.copyright + options.source;
@@ -166,3 +159,4 @@
     ]
 </div>
 </div>
+</body></html>
