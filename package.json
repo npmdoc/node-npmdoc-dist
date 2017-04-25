@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "dist",
-    "description": "api documentation for [dist (v0.1.2)](https://github.com/jgallen23/dist) [![npm package](https://img.shields.io/npm/v/npmdoc-dist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-dist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-dist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-dist)",
+    "description": "#### basic api documentation for  [dist (v0.1.2)](https://github.com/jgallen23/dist)  [![npm package](https://img.shields.io/npm/v/npmdoc-dist.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-dist) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-dist.svg)](https://travis-ci.org/npmdoc/node-npmdoc-dist)",
     "devDependencies": {
         "dist": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
